@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>リンドウネイロ🐉🎵歌まとめ</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+
+      background: #08060d;
+      color: #f5f0ff;
+    }
+
+    /* ヘッダー */
+
+    header {
+      background:
+        radial-gradient(circle at top right, #4b236f 0%, transparent 35%),
+        linear-gradient(135deg, #160c24, #09070d);
+
+      padding: 70px 20px 60px;
+      text-align: center;
+      border-bottom: 1px solid #48235f;
+    }
+
+    header h1 {
+      margin: 0 0 20px;
+      font-size: clamp(28px, 6vw, 50px);
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: #c9b8d8;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .dragon {
+      color: #b46cff;
+    }
+
+    /* メイン */
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px 80px;
+    }
+
+    /* 検索 */
+
+    .search-area {
+      margin-bottom: 30px;
+    }
+
+    #search {
+      width: 100%;
+      padding: 16px 20px;
+
+      background: #15101c;
+      color: white;
+
+      border: 1px solid #4b315b;
+      border-radius: 12px;
+
+      font-size: 16px;
+      outline: none;
+    }
+
+    #search:focus {
+      border-color: #a35cff;
+      box-shadow: 0 0 0 3px rgba(163, 92, 255, 0.15);
+    }
+
+    /* フィルター */
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      border: 1px solid #4b315b;
+      background: #15101c;
+      color: #e9dfff;
+
+      padding: 10px 18px;
+      border-radius: 999px;
+
+      cursor: pointer;
+      font-size: 14px;
+
+      transition: 0.2s;
+    }
+
+    .filter-btn:hover {
+      background: #321b45;
+    }
+
+    .filter-btn.active {
+      background: #6f2c91;
+      border-color: #a95ad5;
+    }
+
+    /* テーブル */
+
+    .table-wrapper {
+      overflow-x: auto;
+
+      border: 1px solid #35203f;
+      border-radius: 16px;
+
+      background: #100c15;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 850px;
+    }
+
+    thead {
+      background: #211329;
+    }
+
+    th {
+      padding: 16px;
+      text-align: left;
+
+      color: #d8b9f3;
+      font-size: 14px;
+
+      border-bottom: 1px solid #4a2c57;
+    }
+
+    td {
+      padding: 16px;
+      border-bottom: 1px solid #271d2e;
+
+      color: #eee8f5;
+      font-size: 14px;
+    }
+
+    tbody tr {
+      transition: 0.2s;
+    }
+
+    tbody tr:hover {
+      background: #1a1220;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* 曲名 */
+
+    .song-title {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    /* YouTubeボタン */
+
+    .youtube-btn {
+      display: inline-block;
+
+      background: linear-gradient(135deg, #8e2de2, #5d1a7c);
+      color: white;
+
+      padding: 9px 14px;
+      border-radius: 8px;
+
+      text-decoration: none;
+      font-weight: bold;
+
+      transition: 0.2s;
+    }
+
+    .youtube-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
+    }
+
+    /* 形式タグ */
+
+    .type {
+      display: inline-block;
+
+      padding: 6px 10px;
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .stream {
+      background: #30213d;
+      color: #d9b8ff;
+    }
+
+    .video {
+      background: #252525;
+      color: #dddddd;
+    }
+
+    /* フッター */
+
+    footer {
+      text-align: center;
+
+      padding: 35px 20px;
+
+      color: #8e8199;
+      font-size: 13px;
+
+      border-top: 1px solid #24192b;
+    }
+
+    /* スマホ */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 50px 18px 40px;
+      }
+
+      main {
+        padding: 30px 12px 60px;
+      }
+
+      .filter-btn {
+        padding: 9px 14px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>
+      <span class="dragon">リンドウネイロ🐉🎵</span><br>
+      歌まとめ
+    </h1>
+
+    <p>
+      リンドウネイロさんが歌唱した楽曲をまとめています。<br>
+      配信・動画などから楽曲を探すことができます。
+    </p>
+  </header>
+
+
+  <main>
+
+    <!-- 検索欄 -->
+
+    <div class="search-area">
+      <input
+        type="text"
+        id="search"
+        placeholder="曲名・コラボ相手などで検索..."
+      >
+    </div>
+
+
+    <!-- フィルター -->
+
+    <div class="filters">
+
+      <button class="filter-btn active" data-filter="all">
+        全表示
+      </button>
+
+      <button class="filter-btn" data-filter="配信">
+        配信
+      </button>
+
+      <button class="filter-btn" data-filter="動画">
+        動画
+      </button>
+
+    </div>
+
+
+    <!-- 楽曲一覧 -->
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>曲名</th>
+            <th>with</th>
+            <th>リンク</th>
+            <th>備考</th>
+            <th>形式</th>
+          </tr>
+        </thead>
+
+
+        <tbody id="song-list">
+
+          <tr data-type="動画">
+            <td>2026/8/14</td>
+            <td class="song-title">完全感覚Dreamer</td>
+            <td>こったろ</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtu.be/Zcloy2ne3lw?si=NFbg0CvfLHJzAw-"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type video">動画</span></td>
+          </tr>
+
+
+          <tr data-type="動画">
+            <td>2026/1/11</td>
+            <td class="song-title">アラサガシ</td>
+            <td>ユエル/らみ/ひつじ</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtu.be/9UifPdwXJ4?si=8khjdzlX2-Gm5K"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type video">動画</span></td>
+          </tr>
+
+
+          <tr data-type="配信">
+            <td>2025/12/6</td>
+            <td class="song-title">モノクロのキス</td>
+            <td>—</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtube.com/live/5OzfoDZ0I"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type stream">配信</span></td>
+          </tr>
+
+
+          <tr data-type="配信">
+            <td>2025/12/6</td>
+            <td class="song-title">IRIS OUT</td>
+            <td>—</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtube.com/live/5OzfoDZ0I"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type stream">配信</span></td>
+          </tr>
+
+
+          <tr data-type="動画">
+            <td>2025/11/25</td>
+            <td class="song-title">命に嫌われている（不器用な男 Ver.）</td>
+            <td>—</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtube.com/watch?v=9fmezyZeI7M"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>No.001</td>
+            <td><span class="type video">動画</span></td>
+          </tr>
+
+
+          <tr data-type="配信">
+            <td>2025/11/25</td>
+            <td class="song-title">ニア</td>
+            <td>—</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtube.com/live/eiZhbmtZ8K"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type stream">配信</span></td>
+          </tr>
+
+
+          <tr data-type="動画">
+            <td>2025/11/23</td>
+            <td class="song-title">傷命</td>
+            <td>ユエル/らみ/ひつじ</td>
+            <td>
+              <a
+                class="youtube-btn"
+                href="https://youtu.be/8Kkhq0WaaQ"
+                target="_blank"
+              >
+                ▶ YouTube
+              </a>
+            </td>
+            <td>—</td>
+            <td><span class="type video">動画</span></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    リンドウネイロ🐉🎵 歌まとめ
+  </footer>
+
+
+  <script>
+
+    const search = document.getElementById("search");
+    const rows = document.querySelectorAll("#song-list tr");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    let currentFilter = "all";
+
+
+    function filterSongs() {
+
+      const keyword = search.value.toLowerCase();
+
+      rows.forEach(row => {
+
+        const text = row.innerText.toLowerCase();
+        const type = row.dataset.type;
+
+        const matchesSearch =
+          text.includes(keyword);
+
+        const matchesFilter =
+          currentFilter === "all" ||
+          type === currentFilter;
+
+
+        if (matchesSearch && matchesFilter) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+
+      });
+
+    }
+
+
+    search.addEventListener(
+      "input",
+      filterSongs
+    );
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        currentFilter =
+          button.dataset.filter;
+
+        filterSongs();
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
