@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>リンドウネイロ 🪽 歌まとめ</title>
 
   <style>
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -21,57 +17,24 @@
     }
 
     body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Hiragino Sans",
-        "Yu Gothic",
-        "Meiryo",
-        sans-serif;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #24142f 0%,
-          #100b1a 45%,
-          #07070d 100%
-        );
-
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: radial-gradient(circle at top, #24142f 0%, #100b1a 45%, #07070d 100%);
       color: #f5f2ff;
       min-height: 100vh;
     }
 
-    /* ===== ヘッダー ===== */
-
     header {
       padding: 38px 15px 30px;
       text-align: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(120, 60, 170, 0.18),
-          rgba(0, 0, 0, 0)
-        );
-
-      border-bottom:
-        1px solid rgba(190, 110, 255, 0.4);
+      background: linear-gradient(135deg, rgba(120, 60, 170, 0.18), rgba(0, 0, 0, 0));
+      border-bottom: 1px solid rgba(190, 110, 255, 0.4);
     }
 
     h1 {
       margin: 0 0 16px;
-
       font-size: clamp(24px, 6vw, 42px);
       line-height: 1.25;
-
-      background:
-        linear-gradient(
-          90deg,
-          #a86cff,
-          #f0c5ff,
-          #a86cff
-        );
-
+      background: linear-gradient(90deg, #a86cff, #f0c5ff, #a86cff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -79,24 +42,17 @@
     .description {
       max-width: 750px;
       margin: 0 auto;
-
       color: #ded8e8;
-
       font-size: clamp(13px, 3.5vw, 17px);
       line-height: 1.7;
     }
 
-    /* ===== メイン ===== */
-
     main {
       width: 100%;
       max-width: 1100px;
-
       margin: 0 auto;
       padding: 25px 10px 50px;
     }
-
-    /* ===== 検索 ===== */
 
     .search-box {
       width: 100%;
@@ -106,17 +62,10 @@
     #search {
       width: 100%;
       padding: 13px 15px;
-
       border-radius: 14px;
-
-      border:
-        1px solid rgba(190, 110, 255, 0.5);
-
-      background:
-        rgba(255, 255, 255, 0.06);
-
+      border: 1px solid rgba(190, 110, 255, 0.5);
+      background: rgba(255, 255, 255, 0.06);
       color: white;
-
       font-size: 14px;
       outline: none;
     }
@@ -127,72 +76,41 @@
 
     #search:focus {
       border-color: #c87cff;
-
-      box-shadow:
-        0 0 0 3px rgba(180, 90, 255, 0.15);
+      box-shadow: 0 0 0 3px rgba(180, 90, 255, 0.15);
     }
-
-    /* ===== フィルター ===== */
 
     .filters {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
       gap: 7px;
       margin-bottom: 20px;
     }
 
     .filter-btn {
       padding: 9px 14px;
-
       border-radius: 999px;
-
-      border:
-        1px solid rgba(190, 110, 255, 0.45);
-
-      background:
-        rgba(255, 255, 255, 0.03);
-
+      border: 1px solid rgba(190, 110, 255, 0.45);
+      background: rgba(255, 255, 255, 0.03);
       color: #eee8f5;
-
       font-size: 12px;
       font-weight: bold;
-
       cursor: pointer;
     }
 
     .filter-btn.active {
-      background:
-        linear-gradient(
-          135deg,
-          #a84dff,
-          #6e2c9d
-        );
-
+      background: linear-gradient(135deg, #a84dff, #6e2c9d);
       border-color: #ca7cff;
-
-      box-shadow:
-        0 5px 20px rgba(150, 50, 255, 0.25);
+      box-shadow: 0 5px 20px rgba(150, 50, 255, 0.25);
     }
-
-    /* ===== テーブル ===== */
 
     .table-wrap {
       width: 100%;
-
-      border:
-        1px solid rgba(190, 110, 255, 0.35);
-
+      border: 1px solid rgba(190, 110, 255, 0.35);
       border-radius: 14px;
-
       overflow: hidden;
-
-      background:
-        rgba(15, 13, 25, 0.75);
-
-      box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.25);
+      background: rgba(15, 13, 25, 0.75);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     }
 
     table {
@@ -202,24 +120,14 @@
     }
 
     thead {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(100, 40, 130, 0.45),
-          rgba(70, 35, 90, 0.45)
-        );
+      background: linear-gradient(90deg, rgba(100, 40, 130, 0.45), rgba(70, 35, 90, 0.45));
     }
 
-    th,
-    td {
+    th, td {
       padding: 9px 4px;
-
       text-align: left;
       vertical-align: middle;
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.09);
-
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
       overflow-wrap: normal;
       word-break: normal;
     }
@@ -245,76 +153,50 @@
     }
 
     tbody tr:hover {
-      background:
-        rgba(180, 100, 255, 0.08);
+      background: rgba(180, 100, 255, 0.08);
     }
 
-    /* ===== 列幅 ===== */
-
-    th:nth-child(1),
-    td:nth-child(1) {
+    th:nth-child(1), td:nth-child(1) {
       width: 15%;
       white-space: nowrap;
     }
 
-    th:nth-child(2),
-    td:nth-child(2) {
+    th:nth-child(2), td:nth-child(2) {
       width: 22%;
     }
 
-    th:nth-child(3),
-    td:nth-child(3) {
+    th:nth-child(3), td:nth-child(3) {
       width: 20%;
     }
 
-    th:nth-child(4),
-    td:nth-child(4) {
+    th:nth-child(4), td:nth-child(4) {
       width: 18%;
       text-align: center;
     }
 
-    th:nth-child(5),
-    td:nth-child(5) {
+    th:nth-child(5), td:nth-child(5) {
       width: 11%;
     }
 
-    th:nth-child(6),
-    td:nth-child(6) {
+    th:nth-child(6), td:nth-child(6) {
       width: 14%;
       text-align: center;
     }
 
-    /* ===== YouTubeボタン ===== */
-
     .youtube-btn {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       width: 100%;
       padding: 7px 2px;
-
       border-radius: 7px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #b739ff,
-          #5e158f
-        );
-
+      background: linear-gradient(135deg, #b739ff, #5e158f);
       color: white;
       text-decoration: none;
-
       font-size: 10px;
       font-weight: bold;
-
       white-space: nowrap;
-
-      transition:
-        transform 0.2s,
-        opacity 0.2s;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     .youtube-btn:hover {
@@ -322,70 +204,45 @@
       opacity: 0.9;
     }
 
-    /* ===== タグ ===== */
-
     .type-tag {
       display: inline-block;
-
       padding: 4px 6px;
-
       border-radius: 999px;
-
       font-size: 9px;
       font-weight: bold;
-
       white-space: nowrap;
     }
 
     .type-配信 {
-      background:
-        rgba(170, 100, 255, 0.18);
-
+      background: rgba(170, 100, 255, 0.18);
       color: #d9b5ff;
     }
 
     .type-動画 {
-      background:
-        rgba(255, 230, 120, 0.13);
-
+      background: rgba(255, 230, 120, 0.13);
       color: #ffe69a;
     }
 
     .type-オリ曲 {
-      background:
-        rgba(100, 210, 255, 0.13);
-
+      background: rgba(100, 210, 255, 0.13);
       color: #9ee8ff;
     }
 
-    /* ===== 曲がない時 ===== */
-
     #no-result {
       display: none;
-
       padding: 30px 15px;
-
       text-align: center;
-
       color: #bdb4c9;
       font-size: 13px;
     }
 
-    /* ===== フッター ===== */
-
     footer {
       padding: 25px 15px;
-
       text-align: center;
-
-      border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       color: #aaa2b5;
       font-size: 12px;
     }
-
-    /* ===== スマホ ===== */
 
     @media (max-width: 600px) {
 
@@ -426,8 +283,7 @@
         border-radius: 10px;
       }
 
-      th,
-      td {
+      th, td {
         padding: 7px 2px;
       }
 
@@ -440,35 +296,12 @@
         line-height: 1.3;
       }
 
-      th:nth-child(1),
-      td:nth-child(1) {
-        width: 15%;
-      }
-
-      th:nth-child(2),
-      td:nth-child(2) {
-        width: 23%;
-      }
-
-      th:nth-child(3),
-      td:nth-child(3) {
-        width: 20%;
-      }
-
-      th:nth-child(4),
-      td:nth-child(4) {
-        width: 18%;
-      }
-
-      th:nth-child(5),
-      td:nth-child(5) {
-        width: 10%;
-      }
-
-      th:nth-child(6),
-      td:nth-child(6) {
-        width: 14%;
-      }
+      th:nth-child(1), td:nth-child(1) { width: 15%; }
+      th:nth-child(2), td:nth-child(2) { width: 23%; }
+      th:nth-child(3), td:nth-child(3) { width: 20%; }
+      th:nth-child(4), td:nth-child(4) { width: 18%; }
+      th:nth-child(5), td:nth-child(5) { width: 10%; }
+      th:nth-child(6), td:nth-child(6) { width: 14%; }
 
       .youtube-btn {
         padding: 5px 1px;
@@ -480,7 +313,6 @@
         padding: 3px 4px;
         font-size: 8px;
       }
-
     }
 
   </style>
@@ -489,16 +321,13 @@
 <body>
 
   <header>
-
     <h1>リンドウネイロ 🪽 歌まとめ</h1>
 
     <p class="description">
       リンドウネイロさんが歌唱した楽曲をまとめています。<br>
       現在調整中です。
     </p>
-
   </header>
-
 
   <main>
 
@@ -510,27 +339,12 @@
       >
     </div>
 
-
     <div class="filters">
-
-      <button class="filter-btn active" data-filter="all">
-        全表示
-      </button>
-
-      <button class="filter-btn" data-filter="配信">
-        配信
-      </button>
-
-      <button class="filter-btn" data-filter="動画">
-        動画
-      </button>
-
-      <button class="filter-btn" data-filter="オリ曲">
-        オリ曲
-      </button>
-
+      <button class="filter-btn active" data-filter="all">全表示</button>
+      <button class="filter-btn" data-filter="配信">配信</button>
+      <button class="filter-btn" data-filter="動画">動画</button>
+      <button class="filter-btn" data-filter="オリ曲">オリ曲</button>
     </div>
-
 
     <div class="table-wrap">
 
@@ -547,340 +361,555 @@
           </tr>
         </thead>
 
-
         <tbody id="song-list">
-
-          <!-- 2026/8/23 -->
 
           <tr data-type="動画">
             <td>2026/8/23</td>
             <td>日本の夏</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtu.be/rx8X81zQFiU?si=m6k_-QrtC5c8nAlY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtu.be/rx8X81zQFiU?si=m6k_-QrtC5c8nAlY" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-動画">動画</span>
-            </td>
+            <td><span class="type-tag type-動画">動画</span></td>
           </tr>
-
-
-          <!-- 2026/8/21 -->
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>光</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=3762&si=oNUjeEFthju6kVn0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=3762&amp;si=oNUjeEFthju6kVn0" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>楽園</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=3408&si=_twawTxFkAooPVSY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=3408&amp;si=_twawTxFkAooPVSY" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>御手紙</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=3054&si=qudDgsMXvvYvUV7c"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=3054&amp;si=qudDgsMXvvYvUV7c" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>真っ赤な糸</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=2475&si=OZiK3aMhpFUM5OR3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=2475&amp;si=OZiK3aMhpFUM5OR3" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>ザザ降り、ザザ鳴り。</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=2065&si=CDis8MPDbQ2YAmXG"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=2065&amp;si=CDis8MPDbQ2YAmXG" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>あぁあぁあぁああぁあぁああぁ</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=1584&si=8oUGwWBI02Hfcvtk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=1645&amp;si=6RPek-GtmLR6AhkE" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/21</td>
             <td>レド</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/wUvj29GDmuM?t=1278&si=W6w1GWrxe7nQBSXw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/wUvj29GDmuM?t=1278&amp;si=W6w1GWrxe7nQBSXw" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
-
-
-          <!-- 2026/8/14 -->
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>one way</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=3374&si=Ds6idBqlSZ9mwNsC"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=3374&amp;si=Ds6idBqlSZ9mwNsC" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>SHAMROCK</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=2931&si=Lqs6gsSbqmU6Op0P"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=2931&amp;si=Lqs6gsSbqmU6Op0P" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>儚くも永久のカナシ</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=2509&si=MfTo-H17ZYKe-l28"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=2509&amp;si=MfTo-H17ZYKe-l28" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>Can Do</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=2092&si=zQnT5CO93-Uudq9v"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=2092&amp;si=zQnT5CO93-Uudq9v" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>変幻自在のマジカルスター</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=1715&si=IDak-BNoT3JkK1dA"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=1715&amp;si=IDak-BNoT3JkK1dA" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="配信">
             <td>2026/8/14</td>
             <td>夏色えがおで1,2,Jump!</td>
             <td>—</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtube.com/live/2dC4-ycQX9A?t=1288&si=FSCaUj6HUE8emrPy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2dC4-ycQX9A?t=1288&amp;si=FSCaUj6HUE8emrPy" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-配信">配信</span>
-            </td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
           <tr data-type="動画">
             <td>2026/8/14</td>
             <td>完全感覚Dreamer</td>
             <td>こったろ</td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtu.be/ZcIoy2ne3Iw?si=Gr0nYvVKOoGG8vBQ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td><a class="youtube-btn" href="https://youtu.be/ZcIoy2ne3Iw?si=Gr0nYvVKOoGG8vBQ" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-動画">動画</span>
-            </td>
+            <td><span class="type-tag type-動画">動画</span></td>
           </tr>
-
-
-          <!-- 2026/8/9 -->
 
           <tr data-type="オリ曲">
             <td>2026/8/9</td>
             <td>ラストテイクオフ</td>
-            <td>
-              ユエル／らみ／ひづみ／初噛みつき／天來らいむ
-            </td>
-            <td>
-              <a
-                class="youtube-btn"
-                href="https://youtu.be/4rmV0hTyIcs?si=yk99Jh4FaTqRT25d"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ▶ YouTube
-              </a>
-            </td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtu.be/4rmV0hTyIcs?si=yk99Jh4FaTqRT25d" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
             <td>—</td>
-            <td>
-              <span class="type-tag type-オリ曲">オリ曲</span>
-            </td>
+            <td><span class="type-tag type-オリ曲">オリ曲</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>私の最後の日</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=3775&amp;si=hQljJ0014xDUsuDM" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>敗北の少年</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=2535&amp;si=ZL0uy-iVkoLKZuCy" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>天ノ弱</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=2327&amp;si=RAjbWkHtUaqkNA9c" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>IRIS OUT</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=1554&amp;si=GQO4fn7MZ7Tck5sG" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>カルマ</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=1125&amp;si=FMorOd1bQdC2WV02" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/3</td>
+            <td>夜明けと蛍</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/D0rzjlWZx94?t=653&amp;si=mBmBKbF2v8knsvdI" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/2</td>
+            <td>傷明</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/NdNksmH39JM?t=2755&amp;si=cTZ6KN7DXSoIfa4S" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/2</td>
+            <td>天ノ弱</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/NdNksmH39JM?t=2395&amp;si=L8DbVpUXJ1MyHPi-" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/2</td>
+            <td>Pretender</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/NdNksmH39JM?t=1753&amp;si=1Gz1BEX_LrwMwKc_" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/2</td>
+            <td>君の知らない物語</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/NdNksmH39JM?t=1403&amp;si=qoARFqemxtDrU7_4" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/8/2</td>
+            <td>敗北の少年</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/NdNksmH39JM?t=825&amp;si=ulpZYvxH092Qyz46" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/27</td>
+            <td>命にふさわしい</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/y-otw7UkQUU?t=4091&amp;si=ZE3JCmfnERPt2amm" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/27</td>
+            <td>ドライフラワー</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/y-otw7UkQUU?t=1780&amp;si=eT_9k4aEuxdVLIqe" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/27</td>
+            <td>イエスタデイ</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/y-otw7UkQUU?t=915&amp;si=jITW0dMCPZTqkN0Q" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/27</td>
+            <td>ray</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/y-otw7UkQUU?t=391&amp;si=VthrxrshKFQlwjPJ" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="オリ曲">
+            <td>2026/7/26</td>
+            <td>残像になる前に</td>
+            <td>ユエル/らみ/ひづみ/初噛みつき/天來らいむ</td>
+            <td><a class="youtube-btn" href="https://youtu.be/mPJTZF4CYOY?si=L4y4XC1BGyXO_-2g" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-オリ曲">オリ曲</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>小さな恋のうた</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=5111&amp;si=mRuwVKHuDq34oL_z" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>カラフル</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=3336&amp;si=r8hq6cONa7UcZEHV" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>My Soul,Your Beats!</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=2591&amp;si=1NVX6s1Sc-3yNOZg" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>Shining ray</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=2136&amp;si=kOvypFqSyHorRKyL" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>レイン</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=1504&amp;si=LK8C0UKNczTGFGI8" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>veil</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=877&amp;si=Z2dUIlhRk8MXuS5Z" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/17</td>
+            <td>インフェルノ</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/WuPPIIooOZw?t=478&amp;si=yHgTGsAIR_8Kivt6" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/10</td>
+            <td>変わらないもの</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2b0boexZvsg?t=3491&amp;si=lm1N-8WGPiAvy6Br" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/10</td>
+            <td>small world</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2b0boexZvsg?t=2712&amp;si=CsASoNkaLvFw1Liu" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/10</td>
+            <td>寄り酔い</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2b0boexZvsg?t=1726&amp;si=ShWerCbld6mVgBNA" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/10</td>
+            <td>奏</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2b0boexZvsg?t=1154&amp;si=-mrDrZ3keMKo6whr" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/7/10</td>
+            <td>Overdose</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/2b0boexZvsg?t=815&amp;si=9UXxkeB1V1ia4NNj" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>celluloid</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=4245&amp;si=cOUGK4nEPIdY7fu-" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>あの娘シークレット</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=3224&amp;si=Gjp-vfneoWBXqPO4" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>ム責任集合体</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=2657&amp;si=EfKVQjmJM2Nxq0gq" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>君じゃなきゃダメみたい</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=2067&amp;si=A3204g_wnvXhZjU2" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>結ンデ開イテ羅刹ト骸</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=1521&amp;si=vMgbA-YSlIyWKXBF" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/23</td>
+            <td>エイリアンエイリアン</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/n62hv8rpEMI?t=1166&amp;si=ZMNCzyLGlMfOA35O" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/11</td>
+            <td>secret base ～君がくれたもの～</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/F4G8hxJT9AY?t=4661&amp;si=MiV8shZAd3a4HzvY" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/11</td>
+            <td>Fire◎Flower</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/F4G8hxJT9AY?t=3868&amp;si=X3Nppz0C1sCe1Jzx" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/11</td>
+            <td>HANABI</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/F4G8hxJT9AY?t=2339&amp;si=OyB0_DYNGgTjdW4i" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/11</td>
+            <td>打上花火</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/F4G8hxJT9AY?t=1791&amp;si=0kQMBmndQgvhunB6" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/11</td>
+            <td>ロメオ</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/F4G8hxJT9AY?t=976&amp;si=pkoGXce7PC7_uD0w" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>食虫植物</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=4588&amp;si=OGLxWIq6g_HkTTYG" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>ノマド</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=4150&amp;si=M1c9vpmNCgazVckG" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>いますぐ輪廻</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=3593&amp;si=ihPMqo9Dnegvw9uT" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>悪魔の踊り方</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=3085&amp;si=R5Q2fgwxCZ4Kdb9T" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>ももいろの鍵</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=2037&amp;si=3kvh_iEbnCScPJRm" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
+          </tr>
+
+          <tr data-type="配信">
+            <td>2026/6/3</td>
+            <td>ぜんぶあんたのせい</td>
+            <td>—</td>
+            <td><a class="youtube-btn" href="https://youtube.com/live/L_0p-Z9hJnc?t=947&amp;si=wlfsbXB1Tcb7ADY4" target="_blank" rel="noopener noreferrer">▶ YouTube</a></td>
+            <td>—</td>
+            <td><span class="type-tag type-配信">配信</span></td>
           </tr>
 
         </tbody>
@@ -895,112 +924,63 @@
 
   </main>
 
-
   <footer>
     リンドウネイロ 🪽 歌まとめ
   </footer>
 
-
   <script>
 
-    const searchInput =
-      document.getElementById("search");
-
-    const rows =
-      document.querySelectorAll("#song-list tr");
-
-    const filterButtons =
-      document.querySelectorAll(".filter-btn");
-
-    const noResult =
-      document.getElementById("no-result");
+    const searchInput = document.getElementById("search");
+    const rows = document.querySelectorAll("#song-list tr");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const noResult = document.getElementById("no-result");
 
     let currentFilter = "all";
 
-
     function filterSongs() {
 
-      const keyword =
-        searchInput.value.toLowerCase();
-
+      const keyword = searchInput.value.toLowerCase();
       let visibleCount = 0;
-
 
       rows.forEach(row => {
 
-        const text =
-          row.textContent.toLowerCase();
+        const text = row.textContent.toLowerCase();
+        const type = row.dataset.type;
 
-        const type =
-          row.dataset.type;
-
-
-        const matchesSearch =
-          text.includes(keyword);
-
+        const matchesSearch = text.includes(keyword);
 
         const matchesFilter =
-          currentFilter === "all" ||
-          type === currentFilter;
-
+          currentFilter === "all" || type === currentFilter;
 
         if (matchesSearch && matchesFilter) {
-
           row.style.display = "";
           visibleCount++;
-
         } else {
-
           row.style.display = "none";
-
         }
 
       });
 
-
-      if (visibleCount === 0) {
-
-        noResult.style.display = "block";
-
-      } else {
-
-        noResult.style.display = "none";
-
-      }
-
+      noResult.style.display =
+        visibleCount === 0 ? "block" : "none";
     }
 
-
-    searchInput.addEventListener(
-      "input",
-      filterSongs
-    );
-
+    searchInput.addEventListener("input", filterSongs);
 
     filterButtons.forEach(button => {
 
-      button.addEventListener(
-        "click",
-        () => {
+      button.addEventListener("click", () => {
 
-          currentFilter =
-            button.dataset.filter;
+        currentFilter = button.dataset.filter;
 
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
 
-          filterButtons.forEach(btn => {
+        button.classList.add("active");
+        filterSongs();
 
-            btn.classList.remove("active");
-
-          });
-
-
-          button.classList.add("active");
-
-
-          filterSongs();
-
-        }
-      );
+      });
 
     });
 
