@@ -322,6 +322,39 @@
       opacity: 0.9;
     }
 
+/* ===== TikTokボタン ===== */
+
+.tiktok-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 7px 2px;
+
+  border-radius: 7px;
+
+  background: #000;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.tiktok-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
     /* ===== タグ ===== */
 
     .type-tag {
@@ -490,6 +523,12 @@
         border-radius: 5px;
       }
 
+      .tiktok-btn {
+        padding: 5px 1px;
+        font-size: 8px;
+        border-radius: 5px;
+      }
+
       .type-tag {
         padding: 3px 4px;
         font-size: 8px;
@@ -508,7 +547,7 @@
 
     <p class="description">
       リンドウネイロさんが歌唱した楽曲をまとめています。<br>
-       ※同じ日付のリンクを続けて押すと、正しく開かない場合があります。<br>
+      ※同じ日付のリンクを続けて押すと、正しく開かない場合があります。<br>
       ※「with」は、公式サイトのタレント一覧の順に記載しています。
     </p>
 
@@ -573,6 +612,26 @@
 
         <tbody id="song-list">
 
+          <!-- 2026/9/7 -->
+          <tr data-type="その他">
+             <td>2026/9/7</td>
+             <td>スキスキ絶頂症</td>
+             <td>—</td>
+             <td>
+               <a
+                 class="tiktok-btn"
+                 href="https://vt.tiktok.com/ZSq6xeqUT/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+               >
+                 ▶ TikTok
+               </a>
+             </td>
+             <td>—</td>
+             <td>
+               <span class="type-tag type-その他">その他</span>
+             </td>
+           </tr>
          <!-- 2026/9/4 -->
 
           <tr data-type="ショート">
